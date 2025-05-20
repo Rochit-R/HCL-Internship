@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Register - MediaVerse</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Create your MediaVerse account">
+    <meta name="keywords" content="register, account, sign up, mediaverse">
+</head>
+
+<body bgcolor="#f0f0f0" text="#333333">
+    <!-- Header Section -->
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr bgcolor="#2c3e50">
+            <td align="center" height="80">
+                <h1>
+                    <font face="Segoe UI" color="#ecf0f1">
+                        🌌 <abbr title="Media Universe"><b>MediaVerse</b></abbr> 🌌<br>
+                        <small><q>Your Gateway to Multimedia Exploration</q></small>
+                    </font>
+                </h1>
+            </td>
+        </tr>
+    </table>
+
+    <!-- Registration Form Section -->
+    <table width="100%" border="0" cellspacing="0" cellpadding="20">
+        <tr>
+            <td align="center">
+                <table width="60%" bgcolor="#ffffff" cellspacing="0" cellpadding="30" border="1" bordercolor="#dddddd">
+                    <tr>
+                        <td>
+                            <h2>
+                                <font face="Arial" color="#2c3e50">Create Your Account</font>
+                            </h2>
+                            <hr width="50%" color="#3498db" size="2" noshade>
+
+                            <form id="registration-form" action="process-registration.html" method="post" enctype="multipart/form-data">
+                                <fieldset>
+                                    <legend>
+                                        <font face="Arial"><b>Basic Information</b></font>
+                                    </legend>
+                                    
+                                    <table width="100%" border="0" cellspacing="15" cellpadding="0">
+                                        <tr>
+                                            <td width="30%">
+                                                <font face="Arial" size="3">Full Name:</font>
+                                            </td>
+                                            <td width="70%">
+                                                <input type="text" name="fullname" required placeholder="First and Last Name" size="30" pattern="[A-Za-z\s]+" title="Letters only">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <font face="Arial" size="3">Username:</font>
+                                            </td>
+                                            <td>
+                                                <input type="text" name="username" required placeholder="Choose a username" size="30" minlength="4" maxlength="20">
+                                                <output name="username-availability"></output>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <font face="Arial" size="3">Email:</font>
+                                            </td>
+                                            <td>
+                                                <input type="email" name="email" required placeholder="your@email.com" size="30">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <font face="Arial" size="3">Password:</font>
+                                            </td>
+                                            <td>
+                                                <input type="password" name="password" required minlength="8" placeholder="Minimum 8 characters" size="30">
+                                                <meter id="password-strength" min="0" max="4" value="0"></meter>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <font face="Arial" size="3">Confirm Password:</font>
+                                            </td>
+                                            <td>
+                                                <input type="password" name="confirm-password" required size="30">
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </fieldset>
+
+                                <fieldset>
+                                    <legend>
+                                        <font face="Arial"><b>Profile Details</b></font>
+                                    </legend>
+                                    
+                                    <table width="100%" border="0" cellspacing="15" cellpadding="0">
+                                        <tr>
+                                            <td width="30%">
+                                                <font face="Arial" size="3">Date of Birth:</font>
+                                            </td>
+                                            <td width="70%">
+                                                <input type="date" name="birthdate" required min="1900-01-01" max="2025-01-01">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <font face="Arial" size="3">Gender:</font>
+                                            </td>
+                                            <td>
+                                                <select name="gender">
+                                                    <option value="" selected disabled>Select Gender</option>
+                                                    <option value="male">Male</option>
+                                                    <option value="female">Female</option>
+                                                    <option value="other">Other</option>
+                                                    <option value="prefer-not-to-say">Prefer not to say</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <font face="Arial" size="3">Profile Picture:</font>
+                                            </td>
+                                            <td>
+                                                <input type="file" name="profile-pic" accept="image/*">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td valign="top">
+                                                <font face="Arial" size="3">Bio:</font>
+                                            </td>
+                                            <td>
+                                                <textarea name="bio" rows="4" cols="40" placeholder="Tell us about yourself (max 200 characters)" maxlength="200"></textarea>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </fieldset>
+
+                                <fieldset>
+                                    <legend>
+                                        <font face="Arial"><b>Account Preferences</b></font>
+                                    </legend>
+                                    
+                                    <table width="100%" border="0" cellspacing="15" cellpadding="0">
+                                        <tr>
+                                            <td width="30%">
+                                                <font face="Arial" size="3">Membership Plan:</font>
+                                            </td>
+                                            <td width="70%">
+                                                <select name="membership" required>
+                                                    <option value="" disabled selected>Choose membership type</option>
+                                                    <optgroup label="Regular Plans">
+                                                        <option value="basic">Basic - Free</option>
+                                                        <option value="premium">Premium - $9.99/month</option>
+                                                    </optgroup>
+                                                    <optgroup label="Special Plans">
+                                                        <option value="student">Student - $4.99/month</option>
+                                                        <option value="family">Family - $14.99/month</option>
+                                                    </optgroup>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <font face="Arial" size="3">Content Preferences:</font>
+                                            </td>
+                                            <td>
+                                                <input type="checkbox" name="interest_video" value="yes" checked> Video Content<br>
+                                                <input type="checkbox" name="interest_audio" value="yes"> Audio/Podcasts<br>
+                                                <input type="checkbox" name="interest_live" value="yes"> Live Events<br>
+                                                <input type="checkbox" name="interest_interactive" value="yes"> Interactive Media
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <font face="Arial" size="3">Notification Level:</font>
+                                            </td>
+                                            <td>
+                                                <input type="range" name="notifications" min="0" max="2" value="1" list="notification-levels">
+                                                <datalist id="notification-levels">
+                                                    <option value="0" label="Minimal"></option>
+                                                    <option value="1" label="Normal"></option>
+                                                    <option value="2" label="All"></option>
+                                                </datalist>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </fieldset>
+
+                                <fieldset>
+                                    <legend>
+                                        <font face="Arial"><b>Terms & Conditions</b></font>
+                                    </legend>
+                                    
+                                    <table width="100%" border="0" cellspacing="15" cellpadding="0">
+                                        <tr>
+                                            <td colspan="2">
+                                                <label>
+                                                    <input type="checkbox" name="agree_terms" required>
+                                                    <font face="Arial" size="3">I agree to the <a href="C:\Users\91989\Desktop\HCL Internship\Day1\MediaVerse\Supplementary files\terms.html" target="_blank">Terms and Conditions</a></font>
+                                                </label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                <label>
+                                                    <input type="checkbox" name="agree_privacy" required>
+                                                    <font face="Arial" size="3">I agree to the <a href="C:\Users\91989\Desktop\HCL Internship\Day1\MediaVerse\Supplementary files\privacy.html" target="_blank">Privacy Policy</a></font>
+                                                </label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                <label>
+                                                    <input type="checkbox" name="newsletter" checked>
+                                                    <font face="Arial" size="3">Subscribe to our newsletter</font>
+                                                </label>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </fieldset>
+
+                                <table width="100%" border="0" cellspacing="0" cellpadding="20">
+                                    <tr>
+                                        <td align="center">
+                                            <input type="submit" value="Create Account">
+                                            <input type="reset" value="Clear Form">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">
+                                            <font face="Arial" size="3">Already have an account? <a href="login.html">Sign In</a></font>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </form>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <!-- Footer Section -->
+    <table width="100%" bgcolor="#2c3e50" cellspacing="0" cellpadding="20" border="0">
+        <tr>
+            <td align="center">
+                <font face="Arial" color="#ecf0f1" size="3"><b>INTERACTIVE MEDIA PORTAL</b></font>
+                <br>
+                <font face="Arial" color="#bdc3c7" size="2">© 2025 Interactive Media Portal - All Rights Reserved</font>
+                <br><br>
+                <a href="C:\Users\91989\Desktop\HCL Internship\Day1\MediaVerse\Supplementary files\index.html">
+                    <font face="Arial" color="#ecf0f1" size="2">Home</font>
+                </a> &nbsp;|&nbsp;
+                <a href="C:\Users\91989\Desktop\HCL Internship\Day1\MediaVerse\Supplementary files\about.html">
+                    <font face="Arial" color="#ecf0f1" size="2">About</font>
+                </a> &nbsp;|&nbsp;
+                <a href="C:\Users\91989\Desktop\HCL Internship\Day1\MediaVerse\Supplementary files\contact.html">
+                    <font face="Arial" color="#ecf0f1" size="2">Contact Us</font>
+                </a>
+            </td>
+        </tr>
+    </table>
+
+    <!-- Registration Help Dialog -->
+    <dialog id="help-dialog">
+        <h3>
+            <font face="Arial">Registration Help</font>
+        </h3>
+        <p>
+            <font face="Arial">Need assistance with registration?</font>
+        </p>
+        <ul>
+            <li>
+                <font face="Arial">Username must be 4-20 characters</font>
+            </li>
+            <li>
+                <font face="Arial">Password must be at least 8 characters</font>
+            </li>
+            <li>
+                <font face="Arial">All fields marked with * are required</font>
+            </li>
+        </ul>
+        <button onclick="document.getElementById('help-dialog').close()">
+            <font face="Arial">Close</font>
+        </button>
+    </dialog>
+
+    <!-- Password Strength Script (basic example) -->
+    <script>
+        document.querySelector('input[name="password"]').addEventListener('input', function(e) {
+            var strength = 0;
+            var password = e.target.value;
+            
+            if (password.length >= 8) strength += 1;
+            if (password.match(/[a-z]/)) strength += 1;
+            if (password.match(/[A-Z]/)) strength += 1;
+            if (password.match(/[0-9]/)) strength += 1;
+            if (password.match(/[^a-zA-Z0-9]/)) strength += 1;
+            
+            document.getElementById('password-strength').value = strength;
+        });
+    </script>
+</body>
+
+</html>
